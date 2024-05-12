@@ -1,0 +1,51 @@
+import tkinter as tk
+
+# Function to close the window
+def close_window():
+    root.destroy()
+
+# Create the main window
+root = tk.Tk()
+root.title("Label Text Box Example")
+
+# Create a frame to hold the label, text boxes, and Start button
+frame = tk.Frame(root, padx=20, pady=20)
+frame.pack()
+
+# Configure custom fonts and dark mode colors
+custom_font = ('Helvetica', 16)
+bg_color = "#121212"  # Dark background color
+text_color = "white"  # White text color
+button_color = "#4CAF50"  # Green button color
+button_text_color = "white"  # White text on buttons
+
+# Set the background color of the frame
+frame.configure(bg=bg_color)
+
+# Label
+label = tk.Label(frame, text="Label Text Box Example", font=custom_font, bg=bg_color, fg=text_color)
+label.pack()
+
+# ID Entry
+id_label = tk.Label(frame, text="ID:", font=custom_font, bg=bg_color, fg=text_color)
+id_label.pack()
+id_entry = tk.Entry(frame, font=custom_font)
+id_entry.pack()
+
+# Port Entry
+port_label = tk.Label(frame, text="Port:", font=custom_font, bg=bg_color, fg=text_color)
+port_label.pack()
+port_entry = tk.Entry(frame, font=custom_font)
+port_entry.pack()
+
+# Start Button
+start_button = tk.Button(frame, text="Start", command=close_window, font=custom_font, bg=button_color, fg=button_text_color)
+start_button.pack()
+
+# Window Controls (Minimize, Maximize, Close)
+root.attributes('-topmost', 1)
+root.attributes('-topmost', 0)
+root.state('zoomed')
+
+# Run the tkinter main loop
+root.mainloop()
